@@ -1,0 +1,22 @@
+package tracker;
+
+public class AddPointsCommand implements Command{
+
+    private Integer id;
+    private String javaPoints;
+    private String dsaPoints;
+    private String databasesPoints;
+    private String springPoints;
+
+    AddPointsCommand(Integer id, String javaPoints, String dsaPoints, String databasesPoints, String springPoints) {
+        this.id = id;
+        this.javaPoints = javaPoints;
+        this.dsaPoints = dsaPoints;
+        this.databasesPoints = databasesPoints;
+        this.springPoints = springPoints;
+    }
+    @Override
+    public void execute() {
+        CommandHandler.addPoints(id, javaPoints, dsaPoints, databasesPoints, springPoints);
+    }
+}
